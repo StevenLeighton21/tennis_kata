@@ -26,9 +26,21 @@ describe Tennis do
 
   it 'should allow player1 to pull ahead in an even game' do
     subject.score_player2
-    subject.score_player1
-    subject.score_player1
+    2.times { subject.score_player1 }
 
     expect(subject.game_score).to eq('30 - 15')
+  end
+
+  it 'should allow player2 to pull ahead' do
+    2.times { subject.score_player1 }
+    2.times { subject.score_player2 }
+
+    expect(subject.game_score).to eq('30 - 30')
+  end
+
+  it 'should allow player1 to go to 40' do
+    3.times { subject.score_player1 }
+    2.times { subject.score_player2 }
+    expect(subject.game_score).to eq('40 - 30')
   end
 end
