@@ -43,4 +43,11 @@ describe Tennis do
     2.times { subject.score_player2 }
     expect(subject.game_score).to eq('40 - 30')
   end
+
+  it 'should allow both players to reach 40' do
+    3.times { subject.score_player2 }
+    3.times { subject.score_player1 }
+
+    expect(subject.game_score).to eq('40 - 40')
+  end
 end

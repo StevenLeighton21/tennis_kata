@@ -9,6 +9,7 @@ class Tennis
   end
 
   def score_player1
+    @player_1 = 40 and return if @player_1 == 30
     @player_1 += 15
   end
 
