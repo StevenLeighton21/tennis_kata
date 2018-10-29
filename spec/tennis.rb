@@ -1,13 +1,18 @@
 class Tennis
   def initialize
-    @score = '0 - 0'
+    @player_1 = '0'
+    @player_2 = '0'
   end
 
   def game_score
-    @score
+    "#{@player_1} - #{@player_2}"
   end
 
   def score_player1
-    @score = '15 - 0'
+    @player_1 = '15'
+  end
+
+  def score_player2
+    @player_2 = '15'
   end
 end
