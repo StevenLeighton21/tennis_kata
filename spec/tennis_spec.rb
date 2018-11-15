@@ -56,6 +56,17 @@ describe Tennis do
       3.times { subject.score_player1 }
       expect(subject.winner).to eq('player1')
     end
+
+    it 'should only give me a winner when someone has won' do
+      expect(subject.winner).to eq('nobody')
+    end
+
+    it 'should not allow player one to win without being 2 points ahead' do
+      3.times { subject.score_player1 }
+      2.times { subject.score_player2 }
+
+      expect(subject.winner).to eq('nobody')
+    end
   end
 
   context 'player1 scores when both players are at 40' do
