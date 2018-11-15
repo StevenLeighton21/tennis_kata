@@ -50,4 +50,18 @@ describe Tennis do
 
     expect(subject.game_score).to eq('40 - 40')
   end
-end
+
+  context 'player1 has scored 3 times, without player2 scoring' do
+    it 'should allow player1 to win first set' do
+      3.times { subject.score_player1 }
+      expect(subject.winner).to eq('player1')
+    end
+  end
+
+  context 'player1 scores when both players are at 40' do
+  end
+
+  context 'player1 is at advantage, and player2 scores' do
+  end
+
+  end
