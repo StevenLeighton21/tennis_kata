@@ -31,10 +31,20 @@ class Tennis
       p2 = '0'
     end
 
+    if p1 == 'Advantage' && p2 == 'Advantage'
+      @player_1 = 3
+      @player_2 = 3
+      return game_score
+    end
+
     "#{p1} - #{p2}"
   end
 
   def winner
+    if(@player_1 == 5 && @player_2 <= 3)
+      return 'player1'
+    end
+
     if @player_1 - @player_2 >= 3
       return 'player1'
     end

@@ -105,4 +105,25 @@ describe Tennis do
     end
   end
 
+  context 'players score from advantage' do
+    it 'should allow player one to win when scoring from advantage' do
+      3.times { subject.score_player1 }
+      3.times { subject.score_player2 }
+      subject.score_player1
+      # game winning score
+      subject.score_player1
+
+      expect(subject.winner).to eq('player1')
+    end
+
+    it 'should allow player two to win when scoring from advantage' do
+      3.times { subject.score_player1 }
+      3.times { subject.score_player2 }
+      subject.score_player2
+      # game winning score
+      subject.score_player2
+
+      expect(subject.winner).to eq('player2')
+    end
   end
+end
