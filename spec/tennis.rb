@@ -12,6 +12,8 @@ class Tennis
       p1 = '30'
     when 3
       p1 = '40'
+    when 4
+      p1 = 'Advantage'
     else
       p1 = '0'
     end
@@ -23,6 +25,8 @@ class Tennis
       p2 = '30'
     when 3
       p2 = '40'
+    when 4
+      p2 = 'Advantage'
     else
       p2 = '0'
     end
@@ -31,11 +35,14 @@ class Tennis
   end
 
   def winner
-    if @player_1 > @player_2
-      'player1'
-    else
-      'nobody'
+    if @player_1 - @player_2 >= 3
+      return 'player1'
     end
+    else if @player_2 - @player_1 >= 3
+      return 'player2'
+    end
+      'nobody'
+
   end
 
   def score_player1
