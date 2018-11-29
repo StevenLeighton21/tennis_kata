@@ -45,6 +45,10 @@ class Tennis
       return 'player1'
     end
 
+    if(@player_2 == 5 && @player_1 <= 3)
+      return 'player2'
+    end
+
     if @player_1 - @player_2 >= 3
       return 'player1'
     end
